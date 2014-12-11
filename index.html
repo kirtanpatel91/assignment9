@@ -44,38 +44,34 @@ Jesse M. Heines, UMass Lowell Computer Science, heines@cs.uml.edu
     </p>
     <!-- Added form of interaction seach box to this page -->
     Search:
-    <!-- This search box allow users to search for name in people database. -->
+    <!-- This search box allow users to search for name in Roster database. -->
     <input type="search" name="search" id="search" ng-model="query" placeholder="Enter a name...">
 
     <!-- Comment on the database -->
     <p>This is a random set of database generated from <a href="http://www.mockaroo.com/#tab_all" target="_blank">Mockaroo</a>.</p>
-    <!-- This table list all people information from people.json. -->
+    <!-- This table list all random information from roster.json. -->
     <table id="tblRoster">
       <thead>
         <tr>
           <th>#</th>
           <!-- Sorted list by clicking on the headers. -->
-          <th ng-click="sortColumn(2)">Full Name</th>
-          <th ng-click="sortColumn(3)">Language</th>
-          <th ng-click="sortColumn(4)">Web Page</th>
-          <th>Card Number</th>
-          <th>Bit Coin</th>
+          <th ng-click="sortColumn(2)">Gender</th>
+          <th ng-click="sortColumn(3)">First Name</th>
+          <th ng-click="sortColumn(4)">Last Name</th>
+          <th>Email</th>
         </tr>
       </thead>
       <tbody ng-model="jsonData">
         <tr ng-repeat="info in jsonData.data | filter:query | orderBy: sortField: sortDescending">
           <!-- The built-in AngularJS loop index. -->
           <td>{{$index + 1}}</td>
-          <!-- Full name expression from people.json. -->
+          <!-- Gender expression from roster.json. -->
+          <td>{{info.gender}}</td>
+          <!-- first_name expression from roster.json. -->
           <td>{{info.name}}</td>
-          <!-- Language expression from people.json. -->
-          <td>{{info.language}}</td>
-          <!-- Using custom filter domain. This filter extracts only domain name from link. -->
-          <td><a href="http://{{info.webPage}}" target="_blank">{{info.webPage | domain}}</a></td>
-          <!-- Credit card number expression from people.json -->
-          <td>{{info.cardNum}}</td>
-          <!-- Bitcoin address from people.json. -->
-          <td>{{info.bitCoin}}</td>
+          <!-- last_name expression from roster.json. -->
+          <td>{{info.name}}</td>
+          <!-- last_name expression from roster.json. -->
         </tr>
       </tbody>
     </table>
