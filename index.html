@@ -31,3 +31,55 @@ Jesse M. Heines, UMass Lowell Computer Science, heines@cs.uml.edu
   <!-- Css style page -->
   <link type="text/css" rel="stylesheet" href="style.css">
 </head>
+
+<!-- This body contains controller class to the outline of the page -->
+<body ng-controller="RosterCtrl">
+  <div id="content">
+    <!-- Page header and Assignment information. -->
+    <h2 id="maintitle">Assignment 9</h2>
+    <p>Using AngularJS for single webpage application</p>
+
+    <!-- Directions -->
+    <p><em>Click either lightgreen headers row cell to sort the list.</em>
+    </p>
+    <!-- Added form of interaction seach box to this page -->
+    Search:
+    <!-- This search box allow users to search for name in people database. -->
+    <input type="search" name="search" id="search" ng-model="query" placeholder="Enter a name...">
+
+    <!-- Comment on the database -->
+    <p>This is a random set of database generated from <a href="http://www.mockaroo.com/#tab_all" target="_blank">Mockaroo</a>.</p>
+    <!-- This table list all people information from people.json. -->
+    <table id="tblRoster">
+      <thead>
+        <tr>
+          <th>#</th>
+          <!-- Sorted list by clicking on the headers. -->
+          <th ng-click="sortColumn(2)">Full Name</th>
+          <th ng-click="sortColumn(3)">Language</th>
+          <th ng-click="sortColumn(4)">Web Page</th>
+          <th>Card Number</th>
+          <th>Bit Coin</th>
+        </tr>
+      </thead>
+      <tbody ng-model="jsonData">
+        <tr ng-repeat="info in jsonData.data | filter:query | orderBy: sortField: sortDescending">
+          <!-- The built-in AngularJS loop index. -->
+          <td>{{$index + 1}}</td>
+          <!-- Full name expression from people.json. -->
+          <td>{{info.name}}</td>
+          <!-- Language expression from people.json. -->
+          <td>{{info.language}}</td>
+          <!-- Using custom filter domain. This filter extracts only domain name from link. -->
+          <td><a href="http://{{info.webPage}}" target="_blank">{{info.webPage | domain}}</a></td>
+          <!-- Credit card number expression from people.json -->
+          <td>{{info.cardNum}}</td>
+          <!-- Bitcoin address from people.json. -->
+          <td>{{info.bitCoin}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>
