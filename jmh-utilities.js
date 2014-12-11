@@ -62,18 +62,18 @@ myApp.controller('RosterCtrl',
       // will be false if sorting a new column or last sort was descending
       if (colNo === 2) {
         // this is the Student Name column
-        $scope.sortField = "name";
+        $scope.sortField = "gender";
         // The following statement was used in a previous version of this app.
         // before adding the orderBy filter to the ng-repeat directive
       } else if (colNo === 3) {
          // This is the language column.
-        $scope.sortField = "language";
+        $scope.sortField = "first_name";
       } else if (colNo === 4) {
         // This is the webpage column.
-        $scope.sortField = "webPage";
+        $scope.sortField = "last_name";
         // the following statement was used in a previous version of this app
         // before adding the orderBy filter to the ng-repeat directive
-        //    $scope.jsonData.data.RECORDS.sort( sort_by( "millisecs", boolSortAscending ) ) ;
+        // scope.jsonData.data.RECORDS.sort( sort_by( "millisecs", boolSortAscending ) ) ;
       }
       // save the sort paramesters for the next click
       lastSortDescending = $scope.sortDescending;
