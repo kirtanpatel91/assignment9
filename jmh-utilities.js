@@ -81,30 +81,4 @@ myApp.controller('RosterCtrl',
     }
   }
 );
-
-/**
- * Custom filter to slice link for only domain name.
- * This code is taken from: http://stackoverflow.com/questions/14594965/how-to-shorten-url-to-show-domain-only-with-angular-js-filter
- */
-myApp.filter('domain', function() {
-  return function(input) {
-    var matches,
-      output = '',
-      /**
-       * This code is taken from http://stackoverflow.com/questions/569137/how-to-get-domain-name-from-url
-       *
-       * I modified regex by adding more top level domains.
-       */
-    // Regex validation to split out domain between www and top level domains
-    urls = /^(?:www\.)?(.*?)\.(?:com|net|jp|edu|org|gov|de|cn|cz|hk|me|ru|ch|uk|gl|br|fr|io|ly|nl|cc|pl|au|it|fm|au\.uk|co\.in)$/;
-    /*
-     * The exec() method executes for a match.
-     * Match all domain name, ignore www and top level domains in link
-     */
-    matches = urls.exec(input);
-    // If there is no match return the initial link
-    if (matches != null) output = matches[1];
-
-    return output;
-  };
 });
