@@ -16,13 +16,13 @@ var lastSortDescending = false;
 
 // set up AngularJS module, note that name must be the same as that in the
 //    ng-app attribute of the html tag above
-var myApp = angular.module('peopleApp', []);
+var myApp = angular.module('RosterApp', []);
 
 // set a constant to the JSON file path
-myApp.constant("jsonUrl", "people.json");
+myApp.constant("jsonUrl", "roster.json");
 
 // add business logic to the app controller
-myApp.controller('peopleInfo',
+myApp.controller('RosterCtrl',
   /** Read JSON data using Ajax - adapted from Pro AngularJS, p. 149.
    *  @param $scope  the standard AngularJS model scope
    *  @param $http   the built-in AngularJS http object containing the get function
