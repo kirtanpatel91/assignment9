@@ -23,57 +23,57 @@ body, table {
 }
 
 /* collapse the table borders to achieve the desired effect*/
-#tblSubmissions {
+#tblRoster{
   border-collapse: collapse ;
 }
 
 /* add borders and padding to the table head and body cells */
-#tblSubmissions th, #tblSubmissions td {
+#tblRoster th, #tblRoster td {
   border: 1px solid black ;
   padding: 2px 5px ;
 }
 
 /* reverse video header row */
-#tblSubmissions thead tr th {
+#tblRoster thead tr th {
   color: white ;
   background-color: black ;
 }
 
 /* add white right borders to adjacent black header row cells */
-#tblSubmissions thead tr th:nth-child( 5 ) {
+#tblRoster thead tr th:nth-child( 5 ) {
   border-right: 1px solid white ;
 }
 
 
 /* indicate that certain columns are clickable */
-#tblSubmissions thead tr th:nth-child(2),
-#tblSubmissions thead tr th:nth-child(3),
-#tblSubmissions thead tr th:nth-child(4) {
+#tblRoster thead tr th:nth-child(2),
+#tblRoster thead tr th:nth-child(3),
+#tblRoster thead tr th:nth-child(4) {
   color: black ;
   background-color: lightgreen ;
 }
 
 /* handle rollovers on clickable columns */
-#tblSubmissions thead tr th:nth-child(2):hover,
-#tblSubmissions thead tr th:nth-child(3):hover,
-#tblSubmissions thead tr th:nth-child(4):hover {
+#tblRoster thead tr th:nth-child(2):hover,
+#tblRoster thead tr th:nth-child(3):hover,
+#tblRoster thead tr th:nth-child(4):hover {
   cursor: pointer ;
   color: black ;
   background-color: yellow ;
 }
 
 /* align all table body cells to the top of their cells*/
-#tblSubmissions tbody tr td {
+#tblRoster tbody tr td {
   vertical-align: top ;
 }
 
 /* center the cells in the 1st and 4th columns of the table */
-#tblSubmissions tbody tr td:nth-child(1),
-#tblSubmissions tbody tr td:nth-child(5) {
+#tblRoster tbody tr td:nth-child(1),
+#tblRoster tbody tr td:nth-child(5) {
   text-align: center ;
 }
 
 /* set no break in date string column */
-#tblSubmissions tbody tr td:nth-child(4) {
+#tblRoster tbody tr td:nth-child(4) {
   white-space: nowrap ;
 }    
